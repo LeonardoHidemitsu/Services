@@ -1,15 +1,11 @@
 <h2>Disciplinas</h2>
 <div>
   <input #input type="text" />
-  <button (click)="disciplinas.add(input.value, input.value, input.value); input.value = ''">+</button>
+  <button (click)="disciplinas.add(input.value); input.value = ''">+</button>
 </div>
 <ul *ngFor="let disciplina of disciplinas.getList(); index as i">
   <li>
-    {{disciplina.nome}} |
-    {{disciplina.diaDaSemana}} |
-    {{disciplina.horario}}
-    <span (click)="disciplinas.remove(i)" style="cursor: pointer;">
-      -
-    </span>
+    {{ disciplina.materia }}
+    <span (click)="disciplinas.remove(i)" style="cursor: pointer;"> - </span>
   </li>
 </ul>
