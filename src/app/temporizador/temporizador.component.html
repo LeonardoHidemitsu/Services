@@ -3,5 +3,5 @@
 {{ timer.getCount() }}s
 
 <input #input type="number" />
-<button (click)="timer.start(input.value); input.value = ''">Iniciar</button>
+<button (click)="timer.start(1000)">Iniciar</button>
 <button (click)="timer.stop()">Parar</button>

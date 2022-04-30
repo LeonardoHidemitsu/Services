@@ -1,11 +1,35 @@
 <h2>Disciplinas</h2>
+<div>Nome da Matéria</div>
+<input #materia type="text" />
+
+<div>Dia da Semana</div>
+<input #dia type="text" />
+
+<div>Horário Início</div>
+<input #inicio type="time" />
+
+<div>Horário Final</div>
+<input #final type="time" />
+
 <div>
-  <input #input type="text" />
-  <button (click)="disciplinas.add(input.value); input.value = ''">+</button>
+  <br />
+  <button
+    (click)="
+      disciplinas.add(materia.value, dia.value, inicio.value, final.value);
+      materia.value = '';
+      dia.value = '';
+      inicio.value = '';
+      final.value = ''
+    "
+  >
+    +
+  </button>
 </div>
+
 <ul *ngFor="let disciplina of disciplinas.getList(); index as i">
   <li>
-    {{ disciplina.materia }}
+    {{ disciplina.materia }} | {{ disciplina.diaDaSemana }} |
+    {{ disciplina.horInicio }} - {{ disciplina.horFinal }}
     <span (click)="disciplinas.remove(i)" style="cursor: pointer;"> - </span>
   </li>
 </ul>
